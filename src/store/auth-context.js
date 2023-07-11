@@ -10,6 +10,7 @@ export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    console.log("this effect is calling");
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
     if (storedUserLoggedInInformation === "1") {
@@ -18,6 +19,7 @@ export const AuthContextProvider = (props) => {
   }, []);
 
   const loginHandler = (email, password) => {
+    console.log(email);
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
     localStorage.setItem("isLoggedIn", "1");
